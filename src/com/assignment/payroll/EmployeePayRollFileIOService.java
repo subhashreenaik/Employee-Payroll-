@@ -28,6 +28,20 @@ public class EmployeePayRollFileIOService {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * This method is used to print the list of data from a text file to console.
+	 * 
+	 */
+	public void printData() {
+		try {
+			Files.lines(new File("C:\\Users\\91824\\Desktop\\contact.txt").toPath())
+			.forEach(System.out::println);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 	

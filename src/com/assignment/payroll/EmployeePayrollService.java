@@ -49,7 +49,10 @@ public static void main(String[] args)
 	 */
 	employeeService.readEmployeePayRollData(consoleInputReader);
 	employeeService.writeEmployeePayrollData();
-
+	/*
+	 * calling printData method
+	 */
+	new EmployeePayRollFileIOService().printData();
 	
 
 }
