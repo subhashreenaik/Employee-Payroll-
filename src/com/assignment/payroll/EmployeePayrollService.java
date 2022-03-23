@@ -16,6 +16,10 @@ public	EmployeePayrollService(){
 public	EmployeePayrollService(ArrayList<EmployeePayRollData> employeelist){
 	this.employeelist =employeelist;
 }
+/**
+ * This method is used to enter information about employee
+ * @param consoleInputReader
+ */
 private void readEmployeePayRollData(Scanner consoleInputReader) {
 	System.out.println("Enter Employee Id :");
 	int id = consoleInputReader.nextInt();
@@ -26,16 +30,27 @@ private void readEmployeePayRollData(Scanner consoleInputReader) {
 	employeelist.add(new EmployeePayRollData(id, name, salary));
 }
 private void writeEmployeePayrollData() {
-	System.out.println("Writing Payroll Roaster to console "+employeelist);
+	//System.out.println("Writing Payroll Roaster to console "+employeelist);
+	new EmployeePayRollFileIOService().writeData(employeelist);
+	
 }
 
 public static void main(String[] args)
 {
+	
+	/*
+	 * Here arraylist of Employeepayroll object is created
+	 */
 	ArrayList<EmployeePayRollData> 	employeelist= new ArrayList<EmployeePayRollData>();
 	EmployeePayrollService  employeeService = new EmployeePayrollService(employeelist);
 	Scanner consoleInputReader =new Scanner(System.in);
+	/*
+	 * calling the employeepayrolldata method
+	 */
 	employeeService.readEmployeePayRollData(consoleInputReader);
 	employeeService.writeEmployeePayrollData();
+
+	
 
 }
 
