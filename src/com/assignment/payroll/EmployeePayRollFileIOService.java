@@ -42,7 +42,20 @@ public class EmployeePayRollFileIOService {
 		}
 		
 	}
-	
+	/**
+	 * This method is used to count the number of entries to store
+	 * into file.
+	 */
+	public long countEntries() {
+		long entries=0;
+		try {
+			entries=Files.lines(new File("C:\\Users\\91824\\Desktop\\contact.txt").toPath()).count();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return entries;
+	}
 	
 	
 }

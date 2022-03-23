@@ -39,7 +39,7 @@ public static void main(String[] args)
 {
 	
 	/*
-	 * Here arraylist of Employeepayroll object is created
+	 * Here array list of Employeepayroll object is created
 	 */
 	ArrayList<EmployeePayRollData> 	employeelist= new ArrayList<EmployeePayRollData>();
 	EmployeePayrollService  employeeService = new EmployeePayrollService(employeelist);
@@ -53,7 +53,11 @@ public static void main(String[] args)
 	 * calling printData method
 	 */
 	new EmployeePayRollFileIOService().printData();
-	
+	/*
+	 * calling countEntries method to count the entries
+	 */
+	System.out.println(new EmployeePayRollFileIOService().countEntries());
+
 
 }
 
